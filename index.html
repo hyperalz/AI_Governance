@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Governance | Responsible AI Framework & Ethics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl max-w-md w-full p-8 relative">
+                <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    <i data-feather="x" class="w-6 h-6"></i>
+                </button>
+                
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Get in Touch</h3>
+                    <p class="text-gray-600">Let's discuss your AI governance needs</p>
+                </div>
+                
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Organization</label>
+                        <input type="text" name="organization" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea name="message" rows="3" placeholder="Tell us about your AI governance requirements..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</head>
+<body class="bg-gray-50">
+    <custom-navbar></custom-navbar>
+    
+    <!-- Hero Section -->
+    <div class="hero-bg">
+        <div class="hero-content">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">AI Governance Framework</h1>
+            <p class="text-xl md:text-2xl mb-8 leading-relaxed text-white">Build trustworthy, ethical, and compliant AI systems with comprehensive governance frameworks and best practices.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#framework" class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg hover:shadow-xl">
+                    Explore Framework
+                </a>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg hover:shadow-xl">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What is AI Governance?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">AI Governance is the framework of policies, processes, and practices that ensure AI systems are developed, deployed, and managed responsibly, ethically, and in compliance with regulations.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="icon-box mb-6 mx-auto">
+                        <i data-feather="shield" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Risk Management</h3>
+                    <p class="text-gray-600">Identify, assess, and mitigate risks associated with AI systems throughout their lifecycle.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="icon-box mb-6 mx-auto">
+                        <i data-feather="scale" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Ethics & Compliance</h3>
+                    <p class="text-gray-600">Ensure AI systems align with ethical principles and regulatory requirements.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="icon-box mb-6 mx-auto">
+                        <i data-feather="eye" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Transparency</h3>
+                    <p class="text-gray-600">Promote explainability and accountability in AI decision-making processes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework" class="py-20 px-4 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Governance Framework</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">A comprehensive approach to managing AI systems responsibly</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">1</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Policy & Strategy</h3>
+                                <p class="text-gray-600">Establish clear policies, strategies, and governance structures for AI initiatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">2</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Development & Testing</h3>
+                                <p class="text-gray-600">Implement robust development practices, testing, and validation procedures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">3</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Deployment & Monitoring</h3>
+                                <p class="text-gray-600">Deploy AI systems with appropriate monitoring, oversight, and controls.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">4</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Continuous Improvement</h3>
+                                <p class="text-gray-600">Regularly review, update, and improve governance practices based on lessons learned.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="AI Governance Framework" class="rounded-lg mb-6 w-full">
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Risk assessment and mitigation</span>
+                        </div>
+                        <div class="flex items-center mt-3">
+                            <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Bias detection and fairness</span>
+                        </div>
+                        <div class="flex items-center mt-3">
+                            <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Data privacy and security</span>
+                        </div>
+                        <div class="flex items-center mt-3">
+                            <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Model explainability</span>
+                        </div>
+                        <div class="flex items-center mt-3">
+                            <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Compliance monitoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles Section -->
+    <section id="principles" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Core Principles</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Foundational principles for responsible AI development and deployment</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Fairness & Non-Discrimination</h4>
+                    <p class="text-gray-600">Ensure AI systems treat all individuals and groups fairly, without bias or discrimination.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Transparency & Explainability</h4>
+                    <p class="text-gray-600">Make AI decision-making processes understandable and explainable to relevant stakeholders.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Privacy & Security</h4>
+                    <p class="text-gray-600">Protect personal data and ensure robust security measures throughout the AI lifecycle.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Accountability & Human Oversight</h4>
+                    <p class="text-gray-600">Establish clear accountability mechanisms and maintain meaningful human control over AI systems.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Robustness & Safety</h4>
+                    <p class="text-gray-600">Ensure AI systems are reliable, secure, and function safely in their intended environments.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Sustainability & Environmental Impact</h4>
+                    <p class="text-gray-600">Consider the environmental impact of AI systems and promote sustainable practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 px-4 bg-gray-100">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Benefits of AI Governance</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Why organizations need comprehensive AI governance</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-feather="shield-check" class="w-12 h-12 text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Regulatory Compliance</h3>
+                    <p class="text-gray-600">Stay compliant with evolving AI regulations and standards like GDPR, AI Act, and industry-specific requirements.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-feather="trending-up" class="w-12 h-12 text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Risk Mitigation</h3>
+                    <p class="text-gray-600">Identify and mitigate risks early, reducing potential legal, financial, and reputational damage.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i data-feather="users" class="w-12 h-12 text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Stakeholder Trust</h3>
+                    <p class="text-gray-600">Build trust with customers, employees, and partners through transparent and ethical AI practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products/Offerings Section -->
+    <section id="products" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">AI Governance Toolkit</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">A comprehensive package of scripts, templates, and guides to establish AI governance in your organization</p>
+            </div>
+
+            <!-- Product Overview -->
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 mb-16">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Everything You Need to Get Started</h3>
+                        <p class="text-lg text-gray-700 mb-6">This isn't just a collection of tools—it's a complete packaged solution designed to help you establish AI governance quickly and effectively.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Automated discovery scripts for GitHub, Atlassian, and Microsoft 365</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Ready-to-customize policy templates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Step-by-step implementation guides</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="w-6 h-6 text-green-500 mr-3 mt-1 flex-shrink-0"></i>
+                                <span>48-hour quick-start playbook</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">What's Included</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <span class="font-medium text-gray-700">Discovery Scripts</span>
+                                <span class="text-blue-600 font-bold">3</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <span class="font-medium text-gray-700">Policy Templates</span>
+                                <span class="text-blue-600 font-bold">3</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <span class="font-medium text-gray-700">Implementation Guides</span>
+                                <span class="text-blue-600 font-bold">1</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <span class="font-medium text-gray-700">Total Resources</span>
+                                <span class="text-blue-600 font-bold">7+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Components -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Discovery Scripts -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-blue-500 transition duration-300">
+                    <div class="icon-box mb-6">
+                        <i data-feather="search" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Discovery & Audit Scripts</h3>
+                    <p class="text-gray-600 mb-6">Automated Python scripts to discover AI usage across your organization.</p>
+                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <i data-feather="code" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>GitHub Copilot Auditor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="code" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>Atlassian AI Feature Scanner</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="code" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>Microsoft 365 Copilot Checker</span>
+                        </li>
+                    </ul>
+                    <div class="text-xs text-gray-500">
+                        <i data-feather="file-text" class="w-4 h-4 inline mr-1"></i>
+                        CSV reports with risk assessments
+                    </div>
+                </div>
+
+                <!-- Policy Templates -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-blue-500 transition duration-300">
+                    <div class="icon-box mb-6">
+                        <i data-feather="file-text" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Policy & Control Templates</h3>
+                    <p class="text-gray-600 mb-6">Ready-to-customize policy documents and checklists.</p>
+                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <i data-feather="file" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>AI Acceptable Use Policy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="file" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>AI Vendor Assessment Checklist</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="file" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>Request an AI Tool Form Template</span>
+                        </li>
+                    </ul>
+                    <div class="text-xs text-gray-500">
+                        <i data-feather="edit" class="w-4 h-4 inline mr-1"></i>
+                        Fully customizable markdown templates
+                    </div>
+                </div>
+
+                <!-- Implementation Guides -->
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-blue-500 transition duration-300">
+                    <div class="icon-box mb-6">
+                        <i data-feather="book-open" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Action & Implementation Guides</h3>
+                    <p class="text-gray-600 mb-6">Step-by-step guides to implement AI governance quickly.</p>
+                    <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                        <li class="flex items-start">
+                            <i data-feather="clock" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>48-Hour AI Governance Plan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="play-circle" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>Video walkthrough guides</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="checklist" class="w-4 h-4 text-blue-500 mr-2 mt-1"></i>
+                            <span>Quick-start playbook</span>
+                        </li>
+                    </ul>
+                    <div class="text-xs text-gray-500">
+                        <i data-feather="target" class="w-4 h-4 inline mr-1"></i>
+                        Hour-by-hour implementation roadmap
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="bg-gray-50 rounded-2xl p-8 md:p-12 mb-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Key Features</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <i data-feather="shield" class="w-8 h-8 text-blue-500 mx-auto mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Risk Assessment</h4>
+                        <p class="text-sm text-gray-600">Automated risk scoring and prioritization</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-feather="zap" class="w-8 h-8 text-blue-500 mx-auto mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Quick Start</h4>
+                        <p class="text-sm text-gray-600">Get up and running in 48 hours</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-feather="check-circle" class="w-8 h-8 text-blue-500 mx-auto mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Compliance Ready</h4>
+                        <p class="text-sm text-gray-600">GDPR, CCPA, and AI Act considerations</p>
+                    </div>
+                    <div class="text-center">
+                        <i data-feather="code" class="w-8 h-8 text-blue-500 mx-auto mb-3"></i>
+                        <h4 class="font-semibold text-gray-800 mb-2">Open Source</h4>
+                        <p class="text-sm text-gray-600">Customize for your organization</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testing Section -->
+            <div class="bg-blue-50 rounded-2xl p-8 md:p-12 mb-12 border-2 border-blue-200">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Try It Out Now</h3>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Test the GitHub Copilot Auditor script with your own organization. Quick setup, instant results.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg max-w-3xl mx-auto">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i data-feather="terminal" class="w-6 h-6 mr-2 text-blue-600"></i>
+                        Quick Start (3 Steps)
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-1">Get Your GitHub Token</h5>
+                                <p class="text-sm text-gray-600">Create a Personal Access Token with <code class="bg-gray-100 px-1 rounded">repo</code> and <code class="bg-gray-100 px-1 rounded">read:org</code> permissions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-1">Install & Run</h5>
+                                <div class="bg-gray-900 text-green-400 p-3 rounded-lg text-sm font-mono mb-2">
+                                    <div>export GITHUB_TOKEN=your_token</div>
+                                    <div>python test_github_auditor.py your-org-name</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-1">Review Results</h5>
+                                <p class="text-sm text-gray-600">Get a CSV report with risk levels and actionable recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="products/scripts/QUICK_START.md" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 text-center">
+                                <i data-feather="book-open" class="w-4 h-4 inline mr-2"></i>
+                                View Quick Start Guide
+                            </a>
+                            <a href="products/scripts/" target="_blank" class="bg-white hover:bg-gray-100 text-blue-600 border-2 border-blue-600 px-6 py-3 rounded-lg font-medium transition duration-300 text-center">
+                                <i data-feather="download" class="w-4 h-4 inline mr-2"></i>
+                                Download Scripts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Ready to Get Started?</h3>
+                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Download the complete AI Governance Toolkit and start establishing governance in your organization today.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg hover:shadow-xl">
+                        Request Access
+                    </a>
+                    <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg hover:shadow-xl">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 bg-blue-600 text-white px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Implement AI Governance?</h2>
+            <p class="text-xl mb-8">Get started with our comprehensive framework and best practices</p>
+            <a href="#contact" class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-4 rounded-lg font-medium transition duration-300 inline-block">
+                Contact Us Today
+            </a>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Environment variables
+.env
+.env.local
+*.token
+*_token.txt
+
+# Audit results
+*.csv
+!products/scripts/example_*.csv
+audit_results/
+reports/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Credentials (never commit these!)
+*_credentials.json
+*_secrets.json
+github_token.txt
+credentials/
+
