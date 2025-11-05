@@ -764,8 +764,14 @@
     <script src="components/footer.js"></script>
     <script src="script.js"></script>
     <script>
-        // Initialize feather icons
-        feather.replace();
+        // Initialize feather icons after all components are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 200);
+        });
     </script>
 </body>
 </html>
