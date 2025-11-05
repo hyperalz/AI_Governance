@@ -17,6 +17,185 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeModal();
 });
 
+// Demo output simulation
+function runDemo() {
+    const outputDiv = document.getElementById('demo-output');
+    if (!outputDiv) return;
+    
+    // Clear previous output
+    outputDiv.innerHTML = '';
+    
+    // Demo output text - improved readability
+    const demoOutput = `
+═══════════════════════════════════════════════════════════════════
+   GitHub Copilot Auditor
+═══════════════════════════════════════════════════════════════════
+
+
+🔍 Fetching repositories for organization: TechCorp-Dev
+   Found 14 repositories (page 1)...
+   
+✅ Total repositories found: 14
+
+
+🔎 Auditing 14 repositories for Copilot usage...
+
+   [ 1/14] 🔴 TechCorp-Dev/public-api
+           Risk: CRITICAL
+           
+   [ 2/14] 🔴 TechCorp-Dev/marketing-site
+           Risk: CRITICAL
+           
+   [ 3/14] 🟡 TechCorp-Dev/payment-processing
+           Risk: HIGH
+           
+   [ 4/14] 🟡 TechCorp-Dev/user-database
+           Risk: HIGH
+           
+   [ 5/14] 🟡 TechCorp-Dev/internal-admin-tools
+           Risk: HIGH
+           
+   [ 6/14] 🟡 TechCorp-Dev/legacy-monolith
+           Risk: HIGH
+           
+   [ 7/14] 🟢 TechCorp-Dev/documentation
+           Risk: LOW
+           
+   [ 8/14] 🟢 TechCorp-Dev/test-suite
+           Risk: LOW
+           
+   [ 9/14] 🟢 TechCorp-Dev/frontend-app
+           Risk: LOW
+           
+   [10/14] 🟢 TechCorp-Dev/infrastructure
+           Risk: LOW
+           
+   [11/14] 🟢 TechCorp-Dev/design-system
+           Risk: LOW
+           
+   [12/14] 🟢 TechCorp-Dev/analytics-dashboard
+           Risk: LOW
+           
+   [13/14] 🟢 TechCorp-Dev/mobile-app
+           Risk: LOW
+           
+   [14/14] 🟢 TechCorp-Dev/ci-cd-pipelines
+           Risk: LOW
+
+
+✅ Report generated: github_copilot_audit_techcorp-dev_20241104.csv
+   Total repositories audited: 14
+
+
+📊 Risk Summary:
+───────────────────────────────────────────────────────────────────
+   CRITICAL:  2 repositories  (14.3%)
+   HIGH:      4 repositories  (28.6%)
+   LOW:       8 repositories  (57.1%)
+
+
+⚠️  IMPORTANT FINDINGS:
+───────────────────────────────────────────────────────────────────
+
+
+🔴 CRITICAL RISK: 2 repositories
+
+   Copilot is enabled on PUBLIC repositories.
+   This poses significant IP and compliance risks.
+
+   Affected repositories:
+   
+   • TechCorp-Dev/public-api
+     └─ Main public API - sensitive endpoints exposed
+     └─ URL: https://github.com/TechCorp-Dev/public-api
+
+   • TechCorp-Dev/marketing-site
+     └─ Public marketing website with embedded secrets
+     └─ URL: https://github.com/TechCorp-Dev/marketing-site
+
+   💡 RECOMMENDED ACTIONS:
+   1. Immediately review what code is being processed by Copilot
+   2. Consider disabling Copilot on public repositories
+   3. Move sensitive code to private repositories
+   4. Review and remove any secrets or sensitive data
+   5. Implement code scanning for exposed credentials
+
+
+🟡 HIGH RISK: 4 repositories
+
+   Copilot is enabled on PRIVATE repositories.
+   Potential IP/code leakage risk with sensitive codebases.
+
+   Affected repositories:
+   
+   • TechCorp-Dev/payment-processing
+     └─ Payment gateway integration - sensitive financial code
+
+   • TechCorp-Dev/user-database
+     └─ User management system with PII handling
+
+   • TechCorp-Dev/internal-admin-tools
+     └─ Internal admin dashboard
+
+   • TechCorp-Dev/legacy-monolith
+     └─ Legacy system with outdated dependencies
+
+   💡 RECOMMENDED ACTIONS:
+   1. Review Copilot usage policies for private repos
+   2. Ensure team members understand data handling
+   3. Consider enabling Copilot ignore files (.copilotignore)
+   4. Monitor for any unusual Copilot activity
+   5. Document approved use cases
+
+
+🟢 LOW RISK: 8 repositories
+
+   Copilot is disabled or not applicable.
+   No immediate action required.
+
+
+═══════════════════════════════════════════════════════════════════
+✅ Audit complete!
+═══════════════════════════════════════════════════════════════════
+
+
+📄 Full report saved to: github_copilot_audit_techcorp-dev_20241104.csv
+
+
+📋 Next Steps:
+   1. Review the CSV report for detailed findings
+   2. Prioritize CRITICAL and HIGH risk repositories
+   3. Implement remediation actions
+   4. Establish ongoing monitoring and governance
+   5. Update AI governance policies based on findings
+
+
+`;
+
+    // Type out the demo with animation
+    let i = 0;
+    const speed = 2; // milliseconds per character
+    
+    function typeWriter() {
+        if (i < demoOutput.length) {
+            // Use textContent to preserve whitespace and formatting
+            outputDiv.textContent = demoOutput.substring(0, i + 1);
+            i++;
+            setTimeout(typeWriter, speed);
+            // Auto-scroll to bottom
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        } else {
+            // Add cursor blink effect
+            outputDiv.textContent = demoOutput + '█';
+        }
+    }
+    
+    typeWriter();
+}
+
+// Make runDemo available globally
+window.runDemo = runDemo;
+
 function initializeComponents() {
     // Initialize feather icons
     if (typeof feather !== 'undefined') {

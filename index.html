@@ -426,6 +426,116 @@
                 </div>
             </div>
 
+            <!-- Live Demo Section -->
+            <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 md:p-12 mb-12 border-2 border-purple-200">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">See It In Action</h3>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Watch a live demonstration of the GitHub Copilot Auditor analyzing a fictional company</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-xl max-w-5xl mx-auto mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            <span class="text-sm text-gray-500 ml-2">Terminal</span>
+                        </div>
+                        <button onclick="runDemo()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300 flex items-center">
+                            <i data-feather="play" class="w-4 h-4 mr-2"></i>
+                            Run Demo
+                        </button>
+                    </div>
+                    
+                    <div id="demo-output" class="bg-gray-900 text-green-400 p-6 rounded-lg font-mono text-sm overflow-x-auto min-h-[400px] max-h-[600px] overflow-y-auto leading-relaxed whitespace-pre">
+                        <div class="text-gray-500"># Click "Run Demo" to see the audit in action</div>
+                        <div class="text-gray-500 mt-2"># Or scroll down to see example output</div>
+                    </div>
+                </div>
+                
+                <!-- Example Results Summary -->
+                <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+                    <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-red-800">CRITICAL</h4>
+                            <span class="text-2xl font-bold text-red-600">2</span>
+                        </div>
+                        <p class="text-sm text-red-700">Public repos with Copilot enabled</p>
+                        <div class="mt-3 text-xs text-red-600">
+                            <div>• public-api</div>
+                            <div>• marketing-site</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-yellow-800">HIGH</h4>
+                            <span class="text-2xl font-bold text-yellow-600">4</span>
+                        </div>
+                        <p class="text-sm text-yellow-700">Private repos with Copilot</p>
+                        <div class="mt-3 text-xs text-yellow-600">
+                            <div>• payment-processing</div>
+                            <div>• user-database</div>
+                            <div>• internal-admin-tools</div>
+                            <div>• legacy-monolith</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-lg font-bold text-green-800">LOW</h4>
+                            <span class="text-2xl font-bold text-green-600">8</span>
+                        </div>
+                        <p class="text-sm text-green-700">Copilot disabled or safe</p>
+                        <div class="mt-3 text-xs text-green-600">
+                            <div>• documentation</div>
+                            <div>• test-suite</div>
+                            <div>• frontend-app</div>
+                            <div>• + 5 more</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- How It Works -->
+                <div class="bg-white rounded-xl p-6 shadow-lg max-w-5xl mx-auto">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">How The Audit Works</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="flex items-start mb-4">
+                                <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">1</div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800 mb-1">Discovery</h5>
+                                    <p class="text-sm text-gray-600">Scans all repositories in your organization, including private repos</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start mb-4">
+                                <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">2</div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800 mb-1">Analysis</h5>
+                                    <p class="text-sm text-gray-600">Checks Copilot status for each repository and assesses risk level</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-start mb-4">
+                                <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">3</div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800 mb-1">Risk Scoring</h5>
+                                    <p class="text-sm text-gray-600">Categorizes repositories as CRITICAL, HIGH, or LOW risk</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start mb-4">
+                                <div class="bg-blue-100 text-blue-600 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">4</div>
+                                <div>
+                                    <h5 class="font-semibold text-gray-800 mb-1">Reporting</h5>
+                                    <p class="text-sm text-gray-600">Generates CSV report with actionable recommendations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Testing Section -->
             <div class="bg-blue-50 rounded-2xl p-8 md:p-12 mb-12 border-2 border-blue-200">
                 <div class="text-center mb-8">
