@@ -128,3 +128,13 @@ html {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* Prevent excessive capitalization */
+p, span, li, div {
+    text-transform: none;
+}
+
+/* Ensure proper capitalization only where needed */
+h1, h2, h3, h4, h5, h6 {
+    text-transform: none;
+}
+
