@@ -201,6 +201,10 @@ function initializeComponents() {
     setTimeout(() => {
         if (typeof feather !== 'undefined') {
             feather.replace();
+            // Re-initialize after a short delay to catch any dynamically loaded icons
+            setTimeout(() => {
+                feather.replace();
+            }, 300);
         }
     }, 100);
     
