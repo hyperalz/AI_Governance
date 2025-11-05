@@ -197,10 +197,12 @@ function runDemo() {
 window.runDemo = runDemo;
 
 function initializeComponents() {
-    // Initialize feather icons
-    if (typeof feather !== 'undefined') {
-        feather.replace();
-    }
+    // Initialize feather icons - wait a bit for custom components to render
+    setTimeout(() => {
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    }, 100);
     
     // Add loading states to buttons
     addLoadingStates();
