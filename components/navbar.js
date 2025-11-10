@@ -15,7 +15,7 @@ class CustomNavbar extends HTMLElement {
                             <a href="#overview" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Overview</a>
                             <a href="#framework" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Framework</a>
                             <a href="#products" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Products</a>
-                            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Get Free Assessment</a>
+                            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Get free assessment</a>
                         </div>
                         <div class="md:hidden flex items-center">
                             <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600">
@@ -30,7 +30,7 @@ class CustomNavbar extends HTMLElement {
                         <a href="#overview" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Overview</a>
                         <a href="#framework" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Framework</a>
                         <a href="#products" class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Products</a>
-                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium">Get Free Assessment</a>
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium">Get free assessment</a>
                     </div>
                 </div>
             </nav>
