@@ -2,7 +2,7 @@
 
 /* Hero Section Background */
 .hero-bg {
-    background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%), url('assets/growtika-nGoCBxiaRO0-unsplash.jpg');
+    background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.45) 0%, rgba(118, 75, 162, 0.45) 100%), url('assets/growtika-nGoCBxiaRO0-unsplash.jpg');
     background-size: cover;
     background-position: center;
     min-height: 100vh;
